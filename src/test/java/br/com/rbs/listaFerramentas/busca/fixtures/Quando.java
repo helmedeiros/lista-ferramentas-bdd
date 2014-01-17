@@ -10,15 +10,15 @@ public class Quando {
 		this.browser = browser;
 	}
 
-
-	public void procuroPeloNome(String toolName) {
+	public Quando procuroPeloNome(String toolName) {
 		browser.findElement(By.name("form:tool")).sendKeys(toolName);
-		clicarBuscar();
-	}
+	    return this;
+    }
 
 
-	private void clicarBuscar() {
+	public Quando clicarBuscar() {
 		browser.findElement(By.name("form:searchButton")).click();
+        return this;
 	}
 
 }
