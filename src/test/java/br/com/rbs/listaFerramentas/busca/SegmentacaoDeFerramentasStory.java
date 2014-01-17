@@ -19,7 +19,9 @@ public class SegmentacaoDeFerramentasStory extends StoryTest {
 	 */
 	@Test public void quandoProcuroPeloNomeDaFerramentaEExisteRetornaNaLista() {
 		dadoQue.estouNaPaginaPrincipal();
-		quando.procuroPeloNome(TOOLS.ADPWEB.toolName()).clicarBuscar();
+		quando.procuroPeloNome(TOOLS.ADPWEB.toolName())
+                .e()
+                .clicoBuscar();
 		entao.minhaBuscaRetornaAsFerramentas(TOOLS.ADPWEB);
 	}
 	

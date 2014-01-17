@@ -12,13 +12,15 @@ public class Quando {
 
 	public Quando procuroPeloNome(String toolName) {
 		browser.findElement(By.name("form:tool")).sendKeys(toolName);
-	    return this;
+        return this;
     }
 
-
-	public Quando clicarBuscar() {
-		browser.findElement(By.name("form:searchButton")).click();
+    public Quando e(){
         return this;
+    }
+
+	public void clicoBuscar() {
+		browser.findElement(By.name("form:searchButton")).click();
 	}
 
 }
