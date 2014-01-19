@@ -16,9 +16,9 @@ import static org.junit.matchers.JUnitMatchers.containsString;
  * @author helmedeiros
  */
 public class ThenAsserts {
-	private static final String LISTA_FERRAMENTAS = "form:list";
-	private static final String TR = "tr";
-	private static final String TD = "td";
+	private static final String LISTA_FERRAMENTAS_FORM = "form:list";
+	private static final String HTML_TABLE_LINE = "tr";
+	private static final String HTML_TABLE_COLUMN = "td";
 	private static final int SEGUNDA_COLUNA = 1;
 	private static final int PRIMEIRA_COLUNA = 0;
 	private final WebDriver browser;
@@ -30,26 +30,26 @@ public class ThenAsserts {
 		this.browser = browser;
 	}
 
-    public void minhaBuscaRetornaAsFerramentas(TOOLS... tools) {
+    public void mySearchWillReturnTheTools(TOOLS... tools) {
 		//Pega a tabela com os valores.
-		WebElement table = pegarA(LISTA_FERRAMENTAS);
-		ConferirTabela(table, tools);
+		WebElement table = getTheElement(LISTA_FERRAMENTAS_FORM);
+		checkTheTable(table, tools);
 	}
 
-	private void ConferirTabela(WebElement tabela, TOOLS... tools) {
+	private void checkTheTable(WebElement tabela, TOOLS... tools) {
 		// Agora pegue todas as TRs da tabela.
-		List<WebElement> allRows = pegarAs(TR,tabela);
-		conferirLinhas(allRows, tools);
+		List<WebElement> allRows = getTheChildFrom(HTML_TABLE_LINE, tabela);
+		checkTheLines(allRows, tools);
 	}
 
-	private void conferirLinhas(List<WebElement> allRows, TOOLS... tools) {
+	private void checkTheLines(List<WebElement> allRows, TOOLS... tools) {
 		int j = 0;
 		
 		// Interaja com as linhas, pegando as celulas
 		for (WebElement linha : allRows) {
 			if(j>0){
-				List<WebElement> listaCelulas = pegarAs(TD, linha);
-				conferirColunas(listaCelulas, tools[j-1]);
+				List<WebElement> listaCelulas = getTheChildFrom(HTML_TABLE_COLUMN, linha);
+				checkTheColumns(listaCelulas, tools[j - 1]);
 			}
 				
 			j++;
@@ -57,18 +57,18 @@ public class ThenAsserts {
 	}
 
 
-	private void conferirColunas(List<WebElement> listaCelulas, TOOLS tool) {
+	private void checkTheColumns(List<WebElement> listaCelulas, TOOLS tool) {
 		int colunaAtual = 0;
 		
 		for (WebElement celula : listaCelulas) {
-			if(forA(colunaAtual,PRIMEIRA_COLUNA)) assertThat(celula.getText(), containsString(tool.group().toString()));
-			if(forA(colunaAtual,SEGUNDA_COLUNA)) assertThat(celula.getText(), containsString(tool.toolName()));
+			if(is(colunaAtual, PRIMEIRA_COLUNA)) assertThat(celula.getText(), containsString(tool.group().toString()));
+			if(is(colunaAtual, SEGUNDA_COLUNA)) assertThat(celula.getText(), containsString(tool.toolName()));
 			
 			colunaAtual++;
 		}
 	}
 
-	private boolean forA(int colunaAtual, int coluna) {
+	private boolean is(int colunaAtual, int coluna) {
 		return colunaAtual == coluna;
 	}
 	
@@ -78,7 +78,7 @@ public class ThenAsserts {
 	 * @param elementoPai - O elemento pai  a ser buscado.
 	 * @return retorn todos os elementos pai para um filho
 	 */
-	private List<WebElement> pegarAs(String elementoFilho, WebElement elementoPai) {
+	private List<WebElement> getTheChildFrom(String elementoFilho, WebElement elementoPai) {
 		return elementoPai.findElements(By.tagName(elementoFilho));
 	}
 
@@ -88,7 +88,7 @@ public class ThenAsserts {
 	 * @param IdElemento - o identificador elemento especifico.
 	 * @return  retorna um elemento especifico pelo seu identificador.
 	 */
-	private WebElement pegarA(String IdElemento) {
+	private WebElement getTheElement(String IdElemento) {
 		return browser.findElement(By.id(IdElemento));
 	}
 	

@@ -20,7 +20,7 @@ public class SegmentacaoDeFerramentasDefaultStory extends DefaultStory {
 	@Test public void quandoProcuroPeloNomeDaFerramentaEExisteRetornaNaLista() {
 		given.imInTheMainPage();
 		when.searchByAToolName(TOOLS.ADPWEB.toolName());
-		then.minhaBuscaRetornaAsFerramentas(TOOLS.ADPWEB);
+		then.mySearchWillReturnTheTools(TOOLS.ADPWEB);
 	}
 	
 }
