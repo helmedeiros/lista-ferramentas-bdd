@@ -1,5 +1,8 @@
-package br.com.rbs.listaFerramentas.busca.fixtures;
+package br.com.rbs.listaFerramentas.common;
 
+import br.com.rbs.listaFerramentas.busca.fixtures.GivenContext;
+import br.com.rbs.listaFerramentas.busca.fixtures.Entao;
+import br.com.rbs.listaFerramentas.busca.fixtures.Quando;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -7,10 +10,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class StoryTest {
+public class DefaultStory {
 
 	WebDriver browser;
-	protected DadoQue dadoQue;
+	protected GivenContext given;
 	protected Quando quando;
 	protected Entao entao;
 
@@ -18,7 +21,7 @@ public class StoryTest {
 	public void setUp() {
 		browser = firefoxBrowsing();
 
-		dadoQue = new DadoQue(browser);
+		given = new GivenContext(browser);
 		quando = new Quando(browser);
 		entao = new Entao(browser);
 	}

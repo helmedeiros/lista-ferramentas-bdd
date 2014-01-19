@@ -1,6 +1,6 @@
 package br.com.rbs.listaFerramentas.busca;
 
-import br.com.rbs.listaFerramentas.busca.fixtures.StoryTest;
+import br.com.rbs.listaFerramentas.common.DefaultStory;
 import br.com.rbs.listaFerramentas.fixtures.TOOLS;
 import org.junit.Test;
 
@@ -11,14 +11,14 @@ import org.junit.Test;
  * 		Fato "Posso preencher e pesquisar pelo nome de uma ferramenta "
  * @author helio_medeiros
  */
-public class SegmentacaoDeFerramentasStory extends StoryTest {
+public class SegmentacaoDeFerramentasDefaultStory extends DefaultStory {
 	
 	
 	/**
 	 * 		Fato "Posso preencher e pesquisar pelo nome de uma ferramenta "
 	 */
 	@Test public void quandoProcuroPeloNomeDaFerramentaEExisteRetornaNaLista() {
-		dadoQue.estouNaPaginaPrincipal();
+		given.imInTheMainPage();
 		quando.procuroPeloNome(TOOLS.ADPWEB.toolName())
                 .e()
                 .clicoBuscar();
