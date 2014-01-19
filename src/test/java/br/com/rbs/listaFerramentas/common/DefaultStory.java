@@ -1,7 +1,7 @@
 package br.com.rbs.listaFerramentas.common;
 
 import br.com.rbs.listaFerramentas.busca.fixtures.GivenContext;
-import br.com.rbs.listaFerramentas.busca.fixtures.Entao;
+import br.com.rbs.listaFerramentas.busca.fixtures.ThenAsserts;
 import br.com.rbs.listaFerramentas.busca.fixtures.WhenActions;
 import org.junit.After;
 import org.junit.Before;
@@ -15,7 +15,7 @@ public class DefaultStory {
 	WebDriver browser;
 	protected GivenContext given;
 	protected WhenActions when;
-	protected Entao entao;
+	protected ThenAsserts then;
 
 	@Before
 	public void setUp() {
@@ -23,7 +23,7 @@ public class DefaultStory {
 
 		given = new GivenContext(browser);
 		when = new WhenActions(browser);
-		entao = new Entao(browser);
+		then = new ThenAsserts(browser);
 	}
 
 	/**

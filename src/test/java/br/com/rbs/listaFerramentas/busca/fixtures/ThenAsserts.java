@@ -11,7 +11,11 @@ import java.util.List;
 import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
 
-public class Entao {
+/**
+ * Object that checks whether the result of the actions is expected.
+ * @author helmedeiros
+ */
+public class ThenAsserts {
 	private static final String LISTA_FERRAMENTAS = "form:list";
 	private static final String TR = "tr";
 	private static final String TD = "td";
@@ -19,7 +23,10 @@ public class Entao {
 	private static final int PRIMEIRA_COLUNA = 0;
 	private final WebDriver browser;
 
-	public Entao(WebDriver browser) {
+    /** Default constructor
+     * @param browser - The actual browser where the given context pages should be open;
+     */
+	public ThenAsserts(WebDriver browser) {
 		this.browser = browser;
 	}
 
