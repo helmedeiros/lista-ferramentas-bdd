@@ -2,7 +2,7 @@ package br.com.rbs.listaFerramentas.common;
 
 import br.com.rbs.listaFerramentas.busca.fixtures.GivenContext;
 import br.com.rbs.listaFerramentas.busca.fixtures.Entao;
-import br.com.rbs.listaFerramentas.busca.fixtures.Quando;
+import br.com.rbs.listaFerramentas.busca.fixtures.WhenActions;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ public class DefaultStory {
 
 	WebDriver browser;
 	protected GivenContext given;
-	protected Quando quando;
+	protected WhenActions when;
 	protected Entao entao;
 
 	@Before
@@ -22,7 +22,7 @@ public class DefaultStory {
 		browser = firefoxBrowsing();
 
 		given = new GivenContext(browser);
-		quando = new Quando(browser);
+		when = new WhenActions(browser);
 		entao = new Entao(browser);
 	}
 
@@ -35,7 +35,7 @@ public class DefaultStory {
 	private WebDriver ieBrowsing() {
 		DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
 		ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true); 
-		WebDriver browser = new InternetExplorerDriver(ieCapabilities);
+		browser = new InternetExplorerDriver(ieCapabilities);
 		return browser;
 	}
 	
@@ -45,7 +45,7 @@ public class DefaultStory {
 	 * @return The firefox browser
 	 */
 	public WebDriver firefoxBrowsing() {
-		WebDriver browser = new FirefoxDriver();
+		browser = new FirefoxDriver();
 		return browser;
 	}
 	

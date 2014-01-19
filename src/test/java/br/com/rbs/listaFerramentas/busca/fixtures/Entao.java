@@ -66,7 +66,7 @@ public class Entao {
 	}
 	
 	/**
-	 * Pesquisa e retorn todos os elementos pai para um filho.
+	 * Pesquisa and retorn todos os elementos pai para um filho.
 	 * @param elementoFilho - O elemento filho a ser buscado.
 	 * @param elementoPai - O elemento pai  a ser buscado.
 	 * @return retorn todos os elementos pai para um filho
@@ -77,7 +77,7 @@ public class Entao {
 
 	
 	/**
-	 * Pesquisa e retorna um elemento especifico pelo seu identificador.
+	 * Pesquisa and retorna um elemento especifico pelo seu identificador.
 	 * @param IdElemento - o identificador elemento especifico.
 	 * @return  retorna um elemento especifico pelo seu identificador.
 	 */

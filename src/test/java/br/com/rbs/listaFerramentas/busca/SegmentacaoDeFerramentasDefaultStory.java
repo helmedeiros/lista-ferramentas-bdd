@@ -7,21 +7,19 @@ import org.junit.Test;
 /**
  * Fatos "sobre a segmentação de ferramentas"
  * 		Fato "Devo visualizar todos os agrupamentos de ferramentas"
- * 		Fato "Posso selecionar e pesquisar ferramentas pelo seu agrupamento"
- * 		Fato "Posso preencher e pesquisar pelo nome de uma ferramenta "
+ * 		Fato "Posso selecionar and pesquisar ferramentas pelo seu agrupamento"
+ * 		Fato "Posso preencher and pesquisar pelo nome de uma ferramenta "
  * @author helio_medeiros
  */
 public class SegmentacaoDeFerramentasDefaultStory extends DefaultStory {
 	
 	
 	/**
-	 * 		Fato "Posso preencher e pesquisar pelo nome de uma ferramenta "
+	 * 		Fato "Posso preencher and pesquisar pelo nome de uma ferramenta "
 	 */
 	@Test public void quandoProcuroPeloNomeDaFerramentaEExisteRetornaNaLista() {
 		given.imInTheMainPage();
-		quando.procuroPeloNome(TOOLS.ADPWEB.toolName())
-                .e()
-                .clicoBuscar();
+		when.searchByAToolName(TOOLS.ADPWEB.toolName());
 		entao.minhaBuscaRetornaAsFerramentas(TOOLS.ADPWEB);
 	}
 	
