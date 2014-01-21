@@ -2,6 +2,7 @@ package br.com.rbs.listaFerramentas.search.fixtures;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  * Object that will perform the actions of the test.
@@ -44,4 +45,14 @@ public class WhenActions {
 		browser.findElement(By.name(linkName)).click();
 	}
 
+    /**
+     * Perform the search by the given {@link String} group name;
+     * @param group - The {@link String} group name to be searched for;
+     * @return The {@link WhenActions} so it could be used inline.
+     */
+    public WhenActions searchByToolsGroup(String group) {
+        Select groupSelect = new Select(browser.findElement(By.name("form:group")));
+        groupSelect.selectByVisibleText(group);
+        return null;
+    }
 }
