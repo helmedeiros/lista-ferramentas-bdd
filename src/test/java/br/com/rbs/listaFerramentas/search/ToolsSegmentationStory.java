@@ -1,4 +1,4 @@
-package br.com.rbs.listaFerramentas.busca;
+package br.com.rbs.listaFerramentas.search;
 
 import br.com.rbs.listaFerramentas.common.DefaultStory;
 import br.com.rbs.listaFerramentas.fixtures.TOOLS;

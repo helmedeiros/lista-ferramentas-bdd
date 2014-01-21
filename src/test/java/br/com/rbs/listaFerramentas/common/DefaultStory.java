@@ -1,8 +1,8 @@
 package br.com.rbs.listaFerramentas.common;
 
-import br.com.rbs.listaFerramentas.busca.fixtures.GivenContext;
-import br.com.rbs.listaFerramentas.busca.fixtures.ThenAsserts;
-import br.com.rbs.listaFerramentas.busca.fixtures.WhenActions;
+import br.com.rbs.listaFerramentas.search.fixtures.GivenContext;
+import br.com.rbs.listaFerramentas.search.fixtures.ThenAsserts;
+import br.com.rbs.listaFerramentas.search.fixtures.WhenActions;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;

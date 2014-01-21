@@ -1,4 +1,4 @@
-package br.com.rbs.listaFerramentas.busca.fixtures;
+package br.com.rbs.listaFerramentas.search.fixtures;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
