@@ -5,18 +5,16 @@ import br.com.rbs.listaFerramentas.fixtures.TOOLS;
 import org.junit.Test;
 
 /**
- * Fatos "sobre a segmentação de ferramentas"
- * 		Fato "Devo visualizar todos os agrupamentos de ferramentas"
- * 		Fato "Posso selecionar and pesquisar ferramentas pelo seu agrupamento"
- * 		Fato "Posso preencher and pesquisar pelo nome de uma ferramenta "
+ * Facts "about tools segmentation"
+ * 		Fact "Devo visualizar todos os agrupamentos de ferramentas"
+ * 		Fact "I can select and search tools by grouping"
+ * 		Fact "I can fill out and search for the name of a tool"
  * @author helio_medeiros
  */
-public class SegmentacaoDeFerramentasDefaultStory extends DefaultStory {
+public class ToolsSegmentationStory extends DefaultStory {
 	
 	
-	/**
-	 * 		Fato "Posso preencher and pesquisar pelo nome de uma ferramenta "
-	 */
+	/** Fact "I can fill out and search for the name of a tool"	*/
 	@Test public void quandoProcuroPeloNomeDaFerramentaEExisteRetornaNaLista() {
 		given.imInTheMainPage();
 		when.searchByAToolName(TOOLS.ADPWEB.toolName());
