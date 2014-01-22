@@ -61,7 +61,7 @@ public class ThenAsserts {
 		int colunaAtual = 0;
 		
 		for (WebElement celula : listaCelulas) {
-			if(is(colunaAtual, PRIMEIRA_COLUNA)) assertThat(celula.getText(), containsString(tool.group().toString()));
+			if(is(colunaAtual, PRIMEIRA_COLUNA)) assertThat(celula.getText(), containsString(tool.group().getGroupName()));
 			if(is(colunaAtual, SEGUNDA_COLUNA)) assertThat(celula.getText(), containsString(tool.toolName()));
 			
 			colunaAtual++;

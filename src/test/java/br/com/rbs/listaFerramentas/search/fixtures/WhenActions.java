@@ -53,6 +53,7 @@ public class WhenActions {
     public WhenActions searchByToolsGroup(String group) {
         Select groupSelect = new Select(browser.findElement(By.name("form:group")));
         groupSelect.selectByVisibleText(group);
-        return null;
+        iClickOn("form:searchButton");
+        return this;
     }
 }
