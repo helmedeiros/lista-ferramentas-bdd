@@ -25,7 +25,7 @@ public class WhenActions {
      */
 	public WhenActions searchByAToolName(String toolName) {
 		browser.findElement(By.name("form:tool")).sendKeys(toolName);
-        iClickOn("form:searchButton");
+        clickOnSearchButton();
         return this;
     }
 
@@ -41,7 +41,7 @@ public class WhenActions {
      * Click on the given {@link String} linkName.
      * @param linkName - The {@link String} that represents the element's link name that should be clicked.
      */
-	public void iClickOn(final String linkName) {
+	private void iClickOn(final String linkName) {
 		browser.findElement(By.name(linkName)).click();
 	}
 
@@ -53,6 +53,15 @@ public class WhenActions {
     public WhenActions searchByToolsGroup(String group) {
         Select groupSelect = new Select(browser.findElement(By.name("form:group")));
         groupSelect.selectByVisibleText(group);
+        clickOnSearchButton();
+        return this;
+    }
+
+    /**
+     * Find and click on Search Button element.
+     * @return The {@link WhenActions} so it could be used inline.
+     */
+    public WhenActions clickOnSearchButton() {
         iClickOn("form:searchButton");
         return this;
     }
